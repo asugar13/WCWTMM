@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"></meta>
+    <title>Who Can Waste The Most Money</title>
+
+    <!-- can add an icon if we want later
+    <link rel="shortcut icon" href="%PUBLIC_URL%/<SOME ICON>.ico">
+    -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="index.js"></script>
+
+  </head>
+  <body>
+    <h1>Who Can Waste The Most</h1>
+
+    <form id="SignUpForm" action="/signup" method="post">
+            <h2>Please login</h2>
+            <div>
+            <label for="inputEmail">Email address</label>
+            <input name="user" placeholder="User ID" required >
+            <label for="inputPassword">Password</label>
+            <input name="password" type="password" placeholder="Password" required>
+          </div>
+            <button type="submit">Login</button>
+          </form>
+    <!--
+    The only purpose of loading the scripts at the end is to be sure that all
+    DOM elements are ready before script tries to access it.
+
+    Alternatively you can use EventListeners on the document to check if the
+    page was rendered completely and then initialize the app.
+    More info: https://developer.mozilla.org/en-US/docs/Web/API/EventTarget
+    -->
+  </body>
+</html>
