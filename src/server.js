@@ -13,13 +13,15 @@ app.use(bodyParser.urlencoded({ // to support URL-encoded bodies
 }));
 
 //bullshit goes There
-app.engine('.html', require('ejs').__express);
+//app.engine('.html', require('ejs').__express);
 
+//app.use('/assets', express.static(__dirname + '/../assets'));
 
 //till here
 
 app.use(express.static(__dirname + '/../public'));
 app.use(express.static(__dirname + '/../assets'));
+
 //app.use(express.static(__dirname + '/'));
 
 
@@ -34,7 +36,7 @@ app.get('/', function(req, res) {
     });
 });
 
-app.post('/signup', user_routes.SignUp);
+app.post('/login', user_routes.Login);
 
 
 app.listen(3000, console.log('Running on port 3000'));
