@@ -5,6 +5,11 @@ indexPage.submitHandler = function(evt) {
   var formdata = $('#LoginForm').serialize();
   $.post('/login', formdata, function(data){
     console.log(data);
+    if (data == "Successful Login")  {
+      $.get('/', function(){
+        console.log("I did");
+      })
+    }
   });
 };
 
