@@ -1,0 +1,232 @@
+/* #SignUpForm {
+  float: right;
+} */
+
+body {
+  color: white;
+  background-color: black;
+  background-image: url("./bgimage.png");
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  background-attachment: fixed;
+
+}
+
+#login-btn {
+  position: relative;
+  top: -24px;
+
+}
+
+.card {
+  max-height: 315px;
+}
+
+#signupcontainer {
+  height:308px;
+  position: relative;
+}
+
+#logincontainer {
+  background-size: auto;
+   height:185px;
+   position: relative;
+ }
+
+#Rules {
+  width: 30%;
+  background-color: black;
+  border-radius: 5px;
+}
+
+#AmountForm {
+  text-align: center;
+  position: relative;
+  top: -120px;
+}
+
+#paypal-button {
+  text-align: center;
+  position: relative;
+  top: -130px;
+}
+
+#amount-selector {
+  text-align: center;
+  width:13%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#waste-button {
+  position: relative;
+  top:-24px;
+  color: black;
+  background-color: #FFC312;
+  border-color: #FFC312;
+}
+
+#header {
+ /* text-align: center;
+ position: relative;
+ background-color: black;
+ display: inline-block; */
+ position: relative;
+text-align: center;
+width:75%;
+margin-left: auto;
+margin-right: auto;
+top:123px;
+/* margin-top: auto; */
+color: black;
+ background-color: #FFC312;
+ border-radius: 5px;
+
+ /* white-space: nowrap;; */
+}
+
+#forgot_pwd_btn {
+  display: inline-block;
+  position: relative;
+  left:4px;
+  bottom:10px;
+}
+
+#leaderboard {
+  position: relative;
+  bottom: -115px;
+
+}
+
+/* #header title {
+  display: inline-block;
+} */
+
+#ProfileMenu {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  font-size: 18px;
+}
+
+#LoginForm{
+/* align-content: left;
+margin:0;
+border:0;
+padding: 0;
+content: 0;
+width:45%; */
+/* position: absolute; */
+top: 8px;
+left: 16px;
+width:50%;
+}
+
+#SignUpForm{
+/* height: 10%; */
+position: absolute;
+top: 0px;
+right: 16px;
+width:50%;
+/* width: 100%; */
+}
+
+#ProfileMenu {
+  align-content: right;
+}
+
+.card{
+height: 370px;
+/* margin-top: auto;
+margin-bottom: auto; */
+width: 400px;
+background-color: rgba(0,0,0,0.5) !important;
+}
+
+.social_icon span{
+font-size: 60px;
+/* margin-left: 10px; */
+color: #FFC312;
+}
+
+.social_icon span:hover{
+color: white;
+cursor: pointer;
+}
+
+.card-header h3{
+color: white;
+padding:-100px;
+margin: -20px;
+display: inline-block;
+}
+
+.form-control, .input-group-text, .login_btn {
+margin-top:-13px;
+/* margin-bottom:-10px; */
+}
+
+/* div.card-body {
+  margin:0px;
+  border: 0px;
+  margin:0px;
+} */
+
+.card-footer {
+  font-size:14px;
+  margin:0px;
+  padding: 0px;
+  display: inline-block;
+}
+.social_icon{
+position: absolute;
+right: 20px;
+top: -45px;
+}
+
+.input-group-prepend span{
+width: 50px;
+background-color: #FFC312;
+color: black;
+border:0 !important;
+}
+
+input:focus{
+outline: 0 0 0 0  !important;
+box-shadow: 0 0 0 0 !important;
+
+}
+
+.remember{
+color: white;
+}
+
+.remember input
+{
+width: 20px;
+height: 20px;
+/* margin-left: 15px;
+margin-right: 5px; */
+}
+
+.login_btn{
+color: black;
+background-color: #FFC312;
+width: 100px;
+}
+
+.login_btn:hover{
+color: black;
+background-color: white;
+}
+
+.links{
+color: white;
+}
+
+.links a{
+margin-left: 4px;
+}

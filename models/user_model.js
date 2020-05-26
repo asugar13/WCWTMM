@@ -21,8 +21,17 @@ var UserSchema = new Schema(
         amount: {
             type: Number, default: 0
         },
-        isAdmin: {
-            type: Boolean, default: false
+        country: {
+          type: String, required: false
+        },
+        memo: {
+          type: String, default: " "
+        },
+        reset_password_token: {
+          type: String
+        },
+        reset_password_expires: {
+          type: Date
         }
     },
     {
