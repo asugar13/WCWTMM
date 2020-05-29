@@ -83,15 +83,23 @@ exports.ResetPwdEmail = function(req, res) {
         {
           var token = buf.toString('hex');
           let mailTransporter = nodemailer.createTransport({
-              service: 'gmail',
+              //service: "Godaddy",
+              host: 'smtpout.secureserver.net',
+              port:465,
+              //secure: false,
+              debug: true,
+              secureConnection: false,
+              secure: true,
+              tls: { ciphers: 'SSLv3' },
+              requireTLS: true,
               auth: {
-                  user: 'asier.ugartetxe@gmail.com',
-                  pass: 'Testing123?'
+                  user: 'support@whocanwastethemostmoney.com',
+                  pass: 'Indepeus5'
               }
           });
 
           let mailDetails = {
-              from: 'asier.ugartetxe@gmail.com',
+              from: 'support@whocanwastethemostmoney.com',
               to: email,
               subject: 'Reset Your Password',
               text: 'We have received a request to reset the password for your whocanwastethemostmoney.com account.'+

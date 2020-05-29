@@ -100,7 +100,7 @@ indexPage.init = function() {
   $('#LoginForm').submit(this.LoginSubmitHandler);
   $('#SignUpForm').submit(this.SignUpSubmitHandler);
   $('#AmountForm').submit(this.AmountHandler);
-  $('#MyAccountbtn').onClick(this.MyAccountClickHandler);
+  $('#MyAccountbtn').click(this.MyAccountClickHandler);
 
   // $.get('/top20', function(data){
   //   console.log(data[0].username);

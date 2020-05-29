@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"></meta>
+    <title>Who Can Waste The Most Money</title>
+
+    <!-- can add an icon if we want later
+    <link rel="shortcut icon" href="%PUBLIC_URL%/<SOME ICON>.ico"> -->
+
+
+
+    <!-- <link rel="stylesheet" href="../src/assets/css/welcome.css"> -->
+
+    <script
+      src="https://code.jquery.com/jquery-3.1.0.js"
+      integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk="
+      crossorigin="anonymous">
+    </script>
+
+    <!-- <script type="text/javascript" src="../src/assets/scripts/welcome.js"></script> -->
+      <!--  <script type="text/babel" src="/../assets/like_button.js"></script>-->
+  <button id="logout" type="submit" class="btn btn-primary">Logout</button>
+  <button id="MainMenu"  class="btn btn-primary">Main Menu</button>
+  </head>
+  <body>
+    <form id="ResetForm" action="/update_profile" method="post">
+    <div class="container">
+    <div class="d-flex justify-content-center h-100">
+      <div class="card">
+        <div class="card-header">
+          <h3 id="welcome"> </h3> <br>
+          <h10 id="text"> So far, you have wasted on our website. Feel free to change your memo. For further inquiries please contact support at: </h10>
+
+
+          <div class="d-flex justify-content-end social_icon">
+            <span><i class="fab fa-facebook-square"></i></span>
+            <span><i class="fab fa-google-plus-square"></i></span>
+            <span><i class="fab fa-twitter-square"></i></span>
+          </div>
+        </div>
+        <div class="card-body">
+          <form>
+            <div class="input-group form-group"><!--
+            --><div class="input-group-prepend"><!--
+              --><span class="input-group-text"><i class="fas fa-user"></i></span><!--
+            --></div><!--
+            --><h3 type="text" class="form-control" name="user" id="Username" required>Username</h3><!--
+  -->
+            </div><!--  -->
+            <div class="input-group form-group"><!--
+            --><div class="input-group-prepend"><!--
+              --><span class="input-group-text"><i class="fas fa-user"></i></span><!--
+            --></div><!--
+            --><h3 type="text" class="form-control" name="user" id="Email" required>Email</h3><!--
+  -->
+            </div>
+
+            <div class="input-group form-group"><!--
+            --><div class="input-group-prepend"><!--
+              --><span class="input-group-text"><i class="fas fa-user"></i></span><!--
+            --></div><!--
+            --><h3 type="text" class="form-control" name="user" id="Country" required></h3>
+            </div>
+            <div class="input-group form-group"><!--
+            --><div class="input-group-prepend"><!--
+              --><span class="input-group-text"><i class="fas fa-user"></i></span><!--
+            --></div><!--
+            --><h3 type="text" class="form-control" contenteditable="true" name="user" id="Memo" required></h3>
+            </div>
+
+            <div class="form-group">
+              <input type="submit" value="Save" class="btn float-right login_btn">
+            </div>
+          </form>
+        </div>
+        <!-- <div class="card-footer">
+          <div class="d-flex justify-content-center">
+            <a href="#">Forgot your password?</a>
+          </div>
+        </div> -->
+      </div>
+    </div>
+    </div>
+    </form>
+</body>
+</html>
