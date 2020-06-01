@@ -94,7 +94,7 @@ exports.ResetPwdEmail = function(req, res) {
               requireTLS: true,
               auth: {
                   user: 'support@whocanwastethemostmoney.com',
-                  pass: 'Indepeus5'
+                  pass: '9HpQ6rsT1?'
               }
           });
 

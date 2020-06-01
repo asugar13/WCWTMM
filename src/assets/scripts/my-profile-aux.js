@@ -17,7 +17,7 @@ MyProfilePage.loader = function() {
     }
 
     else {
-      $("#text").html(" So far, you have not wasted any money on our website...how lame! Feel free to change your memo. For further inquiries, please contact support at: support@whocanwastethemostmoney.com");
+      $("#text").html(" So far, you have not wasted any money on our website...how lame! <br> Feel free to change your memo. For further inquiries, please contact support at: support@whocanwastethemostmoney.com");
     }
 
     $("#Username").html(data.username);

@@ -38,6 +38,7 @@ body {
 
 .card {
   max-height: 500px;
+
 }
 
 #logincontainer {
@@ -70,7 +71,7 @@ width:50%;
 
 
 .card{
-height: 363px;
+height: 385px;
 /* margin-top: auto;
 margin-bottom: auto; */
 width: 400px;

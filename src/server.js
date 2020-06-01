@@ -83,13 +83,21 @@ app.get('/.well-known/acme-challenge/LzoKO7jnwMULpmPaEna6CE6vy1FH0xk80j8Da5TANbo
   });
 });
 
-// https.createServer({
-//   key: fs.readFileSync(__dirname +'/server.key'),
-//   cert: fs.readFileSync(__dirname +'/server.cert')
-// }, app).listen(3000, () => {
-//   console.log('Listening on port 3000')
-// })
-
-app.listen(3000, () => {
-  console.log("Listening on port 3000");
+https.createServer({
+  key: fs.readFileSync(__dirname +'/server.key'),
+  cert: fs.readFileSync(__dirname +'/server.cert')
+}, app).listen(3000, () => {
+  console.log('Listening on port 3000')
 })
+
+// https.createServer({
+//   key: fs.readFileSync('/etc/letsencrypt/live/whocanwastethemostmoney.com/key.pem'),
+//   cert: fs.readFileSync('/etc/letsencrypt/live/whocanwastethemostmoney.com/cert.pem'),
+//   ca: fs.readFileSync('/etc/letsencrypt/live/whocanwastethemostmoney.com/chain.pem')
+// }, app).listen(443, () => {
+//   console.log('Listening...')
+// })
+//
+// app.listen(3000, () => {
+//   console.log("Listening on port 3000");
+// })
