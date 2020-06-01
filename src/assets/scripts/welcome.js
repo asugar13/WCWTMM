@@ -28,7 +28,7 @@ indexPage.AmountHandler = function(evt) {
 
   paypal.Button.render({
     // Configure environment
-    env: 'sandbox',
+    env: 'production',
     client: {
       sandbox: 'AZwHIzW2wHVO_M8CiZdNaUpRDy4SD-qQahVDdnfrk76LNituycxpZO8Ttdui8CgpzGQmog7dgRHYnZLX',
       production: 'ASzBP2eqEFwcajYZA-h9POWUHjrdg3WTGpofZhR6DNPZhuL1wtzV6S9_d4nbRBHHaJ49vBJBjsD8-37r'
