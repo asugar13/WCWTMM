@@ -18,7 +18,6 @@ body {
 #login-btn {
   position: relative;
   top: -24px;
-
 }
 
 .card {
@@ -40,12 +39,14 @@ body {
   width: 30%;
   background-color: black;
   border-radius: 5px;
+  position: static;
 }
 
 #AmountForm {
   text-align: center;
   position: relative;
-  top: -120px;
+  /* bottom: 90px; */
+   top: -140px;
 }
 
 #paypal-button {
