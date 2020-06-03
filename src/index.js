@@ -26,6 +26,8 @@ $.get('/loggedin', function(data){
     $("#Rules").show();
 //
     $("#header").css("top", "-92px");
+    $("#header").css("margin-top", "92px");
+
     $("#leaderboard").css("top", "-100px");
 
     //renders profile button
