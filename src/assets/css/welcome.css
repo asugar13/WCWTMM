@@ -35,40 +35,94 @@ body {
    position: relative;
  }
 
+* {
+  margin: 0;
+  padding: 0;
+}
+
 #Rules {
+  /* min-height: 216px; */
   width: 30%;
   background-color: black;
   border-radius: 5px;
   position: static;
+  padding: 0;
+  border-right: 0px;
+margin:  0;
+ content: 0px;
 }
+
+/* #AmountForm {
+  max-width:50%;
+  min-width:800px;
+  max-height:500px;
+  min-height:21%;
+
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+  width: 30%;
+  position: relative;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  /* left: 200px; */
+  /* top: -115px; */
+  /* left: 50%; */
+/* margin-top: 20px;   /* top: -140px; */
+   /* float: right; */
+   /* display: inline-block; */
+   /* height: 75%; */
+   /* text-align: center; */
+   /* width: 15%; */
+   /* left: 100px; */
+   /* margin-top:auto; */
+/* }  */
 
 #AmountForm {
   text-align: center;
-  position: relative;
-  /* bottom: 90px; */
-   top: -140px;
+  position: absolute;
+width: 100px;
+height: 50px;
+top: 53px;
+  left:50%;
+  transform: translate(-50%, -50%)
 }
 
-#paypal-button {
-  text-align: center;
-  position: relative;
-  top: -130px;
-}
 
-#amount-selector {
-  text-align: center;
-  width:13%;
+/* #AmountForm {
+  max-height:500px;
+  min-height:21%;
+  margin-top: 10px;
+
+  width: 30%;
+  height: 75%;
+
   margin-left: auto;
   margin-right: auto;
+
+  text-align: center;
+  position: relative;
+  /* bottom: 90px; */
+   /* top: -140px; */
+
+   /* border-radius: 10px; */
+ /* }  */
+
+#bigblock {
+  height: 70%;
+  text-align: center;
+
+
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-#waste-button {
-  position: relative;
-  top:-24px;
-  color: black;
-  background-color: #FFC312;
-  border-color: #FFC312;
-}
+/* #holder {
+  position: absolute;
+  display: inline-block;
+} */
 
 #header {
  /* text-align: center;
@@ -80,14 +134,39 @@ text-align: center;
 width:75%;
 margin-left: auto;
 margin-right: auto;
-top:123px;
-/* margin-top: auto; */
+/* top:2023px; */
+margin-top: 92px;
 color: black;
  background-color: #FFC312;
  border-radius: 5px;
-
  /* white-space: nowrap;; */
 }
+
+#paypal-button {
+  text-align: center;
+  position: relative;
+  top: -130px;
+}
+
+#amount-selector {
+  display: inline-block;
+
+  text-align: center;
+  width:100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#waste-button {
+  display: inline-block;
+  position: relative;
+  top:-24px;
+  color: black;
+  background-color: #FFC312;
+  border-color: #FFC312;
+}
+
+
 
 #forgot_pwd_btn {
   display: inline-block;
