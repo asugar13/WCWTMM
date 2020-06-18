@@ -89,26 +89,11 @@ https.createServer({
 }, app).listen(3000, () => {
   console.log('Listening on port 3000')
 })
-
-// https.createServer({
-//   key: fs.readFileSync('/etc/letsencrypt/live/whocanwastethemostmoney.com/key.pem'),
-//   cert: fs.readFileSync('/etc/letsencrypt/live/whocanwastethemostmoney.com/cert.pem'),
-//   ca: fs.readFileSync('/etc/letsencrypt/live/whocanwastethemostmoney.com/chain.pem')
-// }, app).listen(443, () => {
-//   console.log('Listening...')
-// })
-
+//
 // https.createServer({
 //   key: fs.readFileSync(path.join('..','..','..','..','/etc/letsencrypt/live/whocanwastethemostmoney.com/privkey.pem')),
 //   cert: fs.readFileSync(path.join('..','..','..','..','/etc/letsencrypt/live/whocanwastethemostmoney.com/cert.pem')),
 //   ca: fs.readFileSync(path.join('..','..','..','..','/etc/letsencrypt/live/whocanwastethemostmoney.com/chain.pem'))
 // }, app).listen(3000, () => {
 //   console.log('Listening...')
-// })
-
-
-
-//
-// app.listen(3000, () => {
-//   console.log("Listening on port 3000");
 // })

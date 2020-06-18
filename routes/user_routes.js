@@ -2,6 +2,7 @@ var models = require('../models/user_model');
 var crypto = require('crypto');
 var nodemailer = require("nodemailer");
 var path = require('path');
+var fs = require('fs');
 
 
 
@@ -19,13 +20,12 @@ exports.Login = function(req, res) {
         return res.send("Successful Login");
       }
       else {
-        return res.send("fucked u");
+        return res.send("User not found");
       }
     })
   }
   else {
-    console.log('wat');
-    return res.send("fucked up");
+    return res.send("You need both a user_field and password");
   }
 }
 
@@ -74,6 +74,7 @@ exports.ResetPwdEmail = function(req, res) {
   var query = User.findOne({email: email}, function(err, user) {
     if (user) {
       console.log("i am " + Date.now());
+      //preparing the token
       crypto.randomBytes(20, function(err, buf) {
         if (err) {
           console.log(err);
@@ -103,12 +104,22 @@ exports.ResetPwdEmail = function(req, res) {
               to: email,
               subject: 'Reset Your Password',
               text: 'We have received a request to reset the password for your whocanwastethemostmoney.com account.'+
-              'Please use the following link to reset your password: https://localhost:8080/reset_password?token='+token
+              'Please use the following link to reset your password: https://whocanwastethemostmoney.com/reset_password?token='+token
           };
 
           mailTransporter.sendMail(mailDetails, function(err, data) {
               if(err) {
                   console.log('Error Occurs');
+                  // var content;
+                  // fs.readFile(__dirname + '/pass.txt', 'utf-8', (err, data) => {
+                  //     if (err) throw err;
+                  //     console.log('data is' + data);
+                  //     content = data;
+                  //     return data;
+                  //
+                  //   })
+                    var text = fs.readFileSync(__dirname + '/pass.txt','utf8')
+                    console.log (text + "h");
                   return res.send(err);
               } else {
                   console.log('Email sent successfully');
