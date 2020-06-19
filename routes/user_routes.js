@@ -95,7 +95,7 @@ exports.ResetPwdEmail = function(req, res) {
               requireTLS: true,
               auth: {
                   user: 'support@whocanwastethemostmoney.com',
-                  pass: '9HpQ6rsT1?'
+                  pass: fs.readFileSync(__dirname + '/pass.txt','utf8').split('\n')[0]
               }
           });
 
@@ -118,8 +118,11 @@ exports.ResetPwdEmail = function(req, res) {
                   //     return data;
                   //
                   //   })
-                    var text = fs.readFileSync(__dirname + '/pass.txt','utf8')
-                    console.log (text + "h");
+                    var text = fs.readFileSync(__dirname + '/pass.txt','utf8');
+                    var hola = text.split('\n');
+                    console.log(hola);
+
+
                   return res.send(err);
               } else {
                   console.log('Email sent successfully');
