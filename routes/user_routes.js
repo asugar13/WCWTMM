@@ -30,7 +30,6 @@ exports.Login = function(req, res) {
 }
 
 exports.SignUp = function(req, res) {
-  //console.log("exports.SignUp called");
   var user_name = req.body.user;
   var key = req.body.password;
   var address = req.body.email;
@@ -84,14 +83,12 @@ exports.ResetPwdEmail = function(req, res) {
         {
           var token = buf.toString('hex');
           let mailTransporter = nodemailer.createTransport({
-              //service: "Godaddy",
               host: 'smtpout.secureserver.net',
               port:465,
-              //secure: false,
               debug: true,
               secureConnection: false,
               secure: true,
-              tls: { ciphers: 'SSLv3' },
+              tls: { ciphers: 'SSLv3' }, //TODO: update to TLS
               requireTLS: true,
               auth: {
                   user: 'support@whocanwastethemostmoney.com',
@@ -110,19 +107,6 @@ exports.ResetPwdEmail = function(req, res) {
           mailTransporter.sendMail(mailDetails, function(err, data) {
               if(err) {
                   console.log('Error Occurs');
-                  // var content;
-                  // fs.readFile(__dirname + '/pass.txt', 'utf-8', (err, data) => {
-                  //     if (err) throw err;
-                  //     console.log('data is' + data);
-                  //     content = data;
-                  //     return data;
-                  //
-                  //   })
-                    var text = fs.readFileSync(__dirname + '/pass.txt','utf8');
-                    var hola = text.split('\n');
-                    console.log(hola);
-
-
                   return res.send(err);
               } else {
                   console.log('Email sent successfully');
@@ -131,31 +115,24 @@ exports.ResetPwdEmail = function(req, res) {
                   user.save();
                   console.log(user);
                   return res.send('email sent');
-
               }
           });
-
         }
       });
     }
-    //if the user email was not found
-    else {
+    else {   //user email was not found
       return res.send("user not found");
-
     }
   });
 }
 
 exports.ResetPassword = function(req, res) {
-  console.log(req.body);
-
-  //write code here to make sure the passwords are the same
   models.User.findOne({reset_password_token : req.body.token, reset_password_expires: {
     $gt: Date.now()
   }
 }).exec(function(err, user) {
   if (!err && user) {
-    if (req.body.newPassword === req.body.verifyPassword) {
+    if (req.body.newPassword === req.body.verifyPassword) { //if passwords match
       user.reset_password_token = undefined;
       user.reset_password_expires = undefined;
       user.password = req.body.newPassword;
@@ -166,6 +143,7 @@ exports.ResetPassword = function(req, res) {
 })
 }
 
+//An alternative way of rendering pages...requires absolute file path
 // exports.render_reset_password = function(req, res) {
 //   return res.sendFile(path.resolve(("../dist/reset-password.html"));
 // }
@@ -179,9 +157,8 @@ exports.UpdateProfile = function(req, res) {
 }
 
 exports.Logout = function(req, res) {
-    console.log(req.session);
     req.session = null;
-    console.log(req.session);
+    //console.log('Logged out' + req.session);
     return res.send('user logged out');
 }
 
@@ -194,30 +171,22 @@ exports.MyProfile = function(req, res) {
       }
     })
 
-
     models.User.findOne({username: req.session.user}).exec(function(err, user){
       if (!err && user) {
-
         return res.send
       }
     })
 }
 
-
-
 exports.DisplayTop20 = function(req, res) {
-
   var query = User.find({});
-
   query.select('username amount country memo');
   query.sort({'amount': -1});
-
   query.exec(function(err, top_users) {
         if (err) throw err;
         console.log(top_users);
         res.send(top_users);
   });
-
 };
 
 exports.UpdateAmount = function(req, res) {
@@ -226,5 +195,4 @@ exports.UpdateAmount = function(req, res) {
     if (err) throw err;
     res.send("Amount Updated Successfully");
   })
-
 }

@@ -77,27 +77,4 @@ class Ranking extends React.Component {
   }
 };
 
-// class Ranking extends React.Component {
-//   init() {
-//
-//     $.get('/top20', function(data){
-//       console.log(data[0].username);
-//       console.log('\n');
-//       for (var i=0; i < data.length; i++) {
-//         var nested_user = $("<tr></tr>");
-//         nested_user.append("<td>" + data[i].username + "</td>");
-//         nested_user.append("<td>" + data[i].country + "</td>");
-//         nested_user.append("<td>" + data[i].amount + "</td>");
-//         nested_user.append("<td>" + data[i].memo + "</td>");
-//         $("#leaderboard").append(nested_user);
-//       }
-//       // return;
-//     });
-//   }
-//
-//
-//   render() {
-//     return this.init();
-//   }
-// };
   export default Ranking;

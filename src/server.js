@@ -15,15 +15,10 @@ var app = express();
 
 app.use(session({secret: "Shh, its a secret!"}));
 //app.use(express.static(__dirname + '/../public'));
-
 app.use(express.static(__dirname + '/assets/scripts'));
 app.use(express.static(__dirname + '/assets/css'));
-
-//app.use(express.static(__dirname + '/../static', {dotfiles: 'allow'}));
-
 //app.use(express.static(__dirname + '/../assets'));
-//new line
-app.use(express.static(__dirname + '/../dist'));
+app.use(express.static(__dirname + '/../dist')); //for rendering from dist.
 
 app.engine('.html', require('ejs').__express);
 app.set('views', __dirname +'/../dist');
@@ -31,6 +26,7 @@ app.set('view engine', 'html');
 
 // The request body is received on GET or POST.
 // A middleware that just simplifies things a bit.
+//Allows node to parse packet bodies
 app.use(bodyParser.json()); // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({ // to support URL-encoded bodies
     extended: true
@@ -65,7 +61,8 @@ app.get('/my_profile', function(req, res) {
 });
 
 app.post('/reset_password', user_routes.ResetPassword);
-//app.get('/reset_password', user_routes.render_reset_password);
+//app.get('/reset_password', user_routes.render_reset_password); //alternative way of rendering pages
+//see line 148 in routes.JS. sending the file vs rendering the page
 app.get('/my_account', user_routes.MyProfile);
 app.post('/forgotten_password', user_routes.ResetPwdEmail);
 app.post('/login', user_routes.Login);
@@ -83,13 +80,16 @@ app.get('/.well-known/acme-challenge/LzoKO7jnwMULpmPaEna6CE6vy1FH0xk80j8Da5TANbo
   });
 });
 
+
+//SSL configuration for local development
 https.createServer({
   key: fs.readFileSync(__dirname +'/server.key'),
   cert: fs.readFileSync(__dirname +'/server.cert')
 }, app).listen(3000, () => {
   console.log('Listening on port 3000')
 })
-//
+
+// SSL configuration for production server
 // https.createServer({
 //   key: fs.readFileSync(path.join('..','..','..','..','/etc/letsencrypt/live/whocanwastethemostmoney.com/privkey.pem')),
 //   cert: fs.readFileSync(path.join('..','..','..','..','/etc/letsencrypt/live/whocanwastethemostmoney.com/cert.pem')),
